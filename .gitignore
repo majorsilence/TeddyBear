@@ -1,7 +1,7 @@
 
 
-.vscode
-.build
+.vscode/
+build/
 *.js
 ./*/*.js
 ./*/*/*.js

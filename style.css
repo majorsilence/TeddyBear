@@ -1,0 +1,13 @@
+html{
+	height: 100%;
+
+	/* prevent vertical and horizontal scrollbars 
+	from showing up if we exceed the visible area on the screen */
+	overflow: hidden; 
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
