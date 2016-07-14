@@ -1,26 +1,11 @@
+/// <reference path="./Timer.ts" />
 /// <reference path="./Sprite.ts" />
+
 
 module Majorsilence.TeddyBear.Game {
     var fpsCount = 0;
     var fps = 0;
     var startTime = 0;
-
-    var Timer = function () {
-        this.date = new Date();
-    }
-
-    Timer.prototype.update = function () {
-        var d = new Date();
-        this.date = d;
-    }
-
-    Timer.prototype.getMilliseconds = function () {
-        return this.date.getTime();
-    }
-
-    Timer.prototype.getSeconds = function () {
-        return Math.round(this.date.getTime() / 1000);
-    }
 
     export function Init() {
         var canvas = <HTMLCanvasElement>document.getElementById('game');

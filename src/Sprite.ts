@@ -1,3 +1,5 @@
+/// <reference path="./Timer.ts" />
+
 var Sprite = function(src: string, width : number, height: number, offsetX : number, offsetY : number, frames :number, duration:number){
 	this.spritesheet = null;
 	this.offsetYsetX = 0;
@@ -36,26 +38,26 @@ Sprite.prototype.setSpritesheet = function(src){
 	}
 }
 
-Sprite.prototype.setPosition = function(x, y){
+Sprite.prototype.setPosition = function(x: number, y:number){
 	this.posX = x;
 	this.posY = y;
 }
 
-Sprite.prototype.setOffset = function(x, y){
+Sprite.prototype.setOffset = function(x: number, y: number){
 	this.offsetX = x;
 	this.offsetY = y;
 }
 
-Sprite.prototype.setFrames = function(fcount){
+Sprite.prototype.setFrames = function(fcount: number){
 	this.currentFrame = 0;
 	this.frames = fcount;
 }
 
-Sprite.prototype.setDuration = function(duration){
+Sprite.prototype.setDuration = function(duration: number){
 	this.duration = duration;
 }
 
-Sprite.prototype.animate = function(c, t){
+Sprite.prototype.animate = function(c : CanvasRenderingContext2D, t: Timer){
 	if(t.getMilliseconds() > this.ftime){
 		this.nextFrame();
 	}
@@ -85,7 +87,7 @@ Sprite.prototype.nextFrame = function(){
 	}
 }
 
-Sprite.prototype.draw = function(c){
+Sprite.prototype.draw = function(c: CanvasRenderingContext2D){
 	if(this.shown){
 		c.drawImage(this.spritesheet, 
 			this.offsetX,
